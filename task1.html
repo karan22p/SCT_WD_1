@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en"></html></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIVAM FASHION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <style>
+/* ...styles unchanged for brevity... */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e0f7fa 0%, #fbe9e7 100%);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: -80px;
+    left: -80px;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, #ffb34755 0%, transparent 80%);
+    z-index: 0;
+    pointer-events: none;
+}
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #6a11cb33 0%, transparent 80%);
+    z-index: 0;
+    pointer-events: none;
+}
+#nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 70px;
+    width: 100%;
+    backdrop-filter: blur(14px);
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+    border-bottom: 2px solid #ffb34744;
+    transition: background-color 0.3s;
+}
+#nav1 {
+    font-weight: 700;
+    font-size: 32px;
+    color: #fff;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#nav1 i {
+    color: #ffb347;
+    font-size: 32px;
+}
+#nav2 {
+    display: flex;
+    gap: 30px;
+}
+.anchor {
+    font-size: 17px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s, background 0.3s;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.anchor:hover {
+    color: #ffbb00;
+    background: rgba(255,255,255,0.10);
+    transform: scale(1.09);
+}
+#body1 {
+    margin-top: 100px;
+    padding: 50px 20px 30px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    position: relative;
+    z-index: 1;
+}
+.card {
+    background: linear-gradient(120deg, #fff 80%, #ffe0b2 100%);
+    border-radius: 22px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+    overflow: hidden;
+    max-width: 340px;
+    min-width: 270px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #ffb34733;
+    position: relative;
+}
+.card::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #ffb34733 0%, transparent 80%);
+    z-index: 0;
+}
+.card:hover {
+    transform: translateY(-10px) scale(1.04) rotate(-1deg);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+    border-color: #ffb34788;
+}
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 0 0 22px 22px;
+    box-shadow: 0 2px 12px #ffb34722;
+    margin-bottom: 10px;
+}
+.card .item-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 18px 0 6px 0;
+    color: #222;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.card .item-desc {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 0 14px;
+    min-height: 48px;
+}
+.card .item-price {
+    font-size: 20px;
+    color: #ff4b2b;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+}
+.card .buy-btn {
+    background: linear-gradient(90deg, #ffb347 0%, #ff4b2b 100%);
+    color: #fff;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 18px;
+    margin-top: 4px;
+    box-shadow: 0 2px 8px #1af0e5f3;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    letter-spacing: 1px;
+}
+.card .buy-btn:hover {
+    background: linear-gradient(90deg, #ff4b2b 0%, #ffb347 100%);
+    color: #222;
+    transform: scale(1.07);
+}
+#head {
+    max-width: 500px;
+    min-width: 260px;
+    text-align: center;
+    padding: 30px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, #fffbe7 80%, #ffe0b2 100%);
+    border-radius: 22px;
+    box-shadow: 0 4px 24px #ffb34722;
+    border: 2px solid #ffb34733;
+    margin: 0 10px;
+    position: relative;
+}
+#head::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    bottom: -30px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #6a11cb33 0%, transparent 80%);
+    z-index: 0;
+}
+h2 {
+    font-size: 19px;
+    margin-bottom: 18px;
+    color: #555;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.jfu {
+    background: linear-gradient(120deg, #ff4b2b, #ffb347, #6a11cb);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 74px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    margin: 0;
+}
+#offer {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    margin-top: 22px;
+}
+#off1, #off2 {
+    padding: 12px 22px;
+    font-size: 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    box-shadow: 0 2px 10px #ffb34722;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    border: none;
+    letter-spacing: 1px;
+}
+#off1 {
+    background: linear-gradient(90deg, #222 60%, #6a11cb 100%);
+    color: #fff;
+}
+#off2 {
+    background: linear-gradient(90deg, #ffc107 60%, #ffb347 100%);
+    color: #222;
+}
+#off1:hover, #off2:hover {
+    filter: brightness(1.08);
+    transform: scale(1.05);
+}
+footer {
+    margin-top: auto;
+    background: linear-gradient(90deg, #222 70%, #6a11cb 100%);
+    color: #fff;
+    text-align: center;
+    padding: 22px 0 10px 0;
+    font-size: 16px;
+    letter-spacing: 1px;
+    opacity: 0.97;
+    position: relative;
+    z-index: 2;
+    border-top: 2px solid #ffb34744;
+}
+.footer-links {
+    margin-top: 10px;
+    font-size: 15px;
+}
+.footer-links a {
+    color: #ffc107;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 500;
+}
+.footer-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background: #ffe0b2;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(120deg, #ffb347 40%, #6a11cb 100%);
+    border-radius: 8px;
+}
+@media(max-width: 1100px) {
+    #body1 {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+    }
+    .card img {
+        height: 220px;
+    }
+    #head {
+        margin: 0 0 20px 0;
+    }
+}
+@media(max-width: 700px) {
+    #nav {
+        height: 54px;
+        padding: 0 10px;
+    }
+    #nav1 {
+        font-size: 20px;
+    }
+    #nav1 i {
+        font-size: 20px;
+    }
+    .anchor {
+        font-size: 13px;
+        padding: 4px 8px;
+    }
+    #body1 {
+        padding: 15px 5px;
+        gap: 18px;
+    }
+    .jfu {
+        font-size: 38px;
+    }
+    h2 {
+        font-size: 14px;
+    }
+    #offer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    #off1, #off2 {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    .card img {
+        height: 140px;
+    }
+    #head {
+        padding: 18px 0 10px 0;
+    }
+}
+#nav.scrolled {
+    background-color: rgba(33, 33, 33, 0.97);
+}
+    </style>
+</head>
+<body>
+    <div id="nav" style="background: linear-gradient(90deg, #ffb347 0%, #6a11cb 100%); box-shadow: 0 4px 24px #6a11cb33;">
+        <div id="nav1" style="background: rgba(255,255,255,0.10); padding: 6px 18px; border-radius: 14px; box-shadow: 0 2px 8px #ffb34733;">
+            <i class="fa-solid fa-shirt" style="color:#ff4b2b; background: #fffbe7; border-radius:50%; padding:6px; margin-right:8px;"></i>
+            <span style="font-weight:900; letter-spacing:2px;">
+                <span style="color:#ff4b2b;">SS</span>
+                <span style="color:#6a11cb; margin-left:4px;">FASHIONS</span>
+            </span>
+        </div>
+        <div>
+            <a href="#body1" id="buy-products" class="anchor" style="background: linear-gradient(90deg, #ffb347 60%, #ff4b2b 100%); color:#fff; box-shadow: 0 2px 8px #ffb34744; border-radius: 10px; font-weight:700;">
+                <i class="fa-solid fa-cart-shopping"></i> Buy Products
+            </a>
+        </div>
+        <div id="nav2">
+            <div id="home" class="anchor" style="background: rgba(255,255,255,0.08); border-radius:8px;"><i class="fa-solid fa-house"></i>Home</div>
+            <div id="About" class="anchor" style="background: rgba(255,255,255,0.08); border-radius:8px;"><i class="fa-solid fa-circle-info"></i>About</div>
+            <div id="Shop" class="anchor" style="background: rgba(255,255,255,0.08); border-radius:8px;"><i class="fa-solid fa-store"></i>Shop</div>
+            <div id="Login" class="anchor" style="background: rgba(255,255,255,0.08); border-radius:8px;"><i class="fa-solid fa-envelope"></i>Contact</div>
+        </div>
+    </div>
+        </div>
+    </div>
+    <div id="body1">
+        <div class="card">
+            <img src="https://i.pinimg.com/474x/8c/09/71/8c097126651784e01f704b3c4082078e.jpg" alt="Fashion 1">
+            <div class="item-title">FORMAL WEAR</div>
+            <div class="item-desc">Professional formal shirt & pants for day to day life.</div>
+            <div class="item-price"> ₹2,500</div>
+            <button class="buy-btn"><i class="fa-solid fa-bag-shopping"></i> Buy Now</button>
+        </div>
+        <div id="head">
+            <h2>✦ DON’T HIT PAUSE — STYLE NEVER STOPS. <br/>✦⚡ FASHION NEVER SLEEPS — IT ONLY SWAPS. ⚡</h2>
+            <b style="font-size:18px; color:#ff4b2b; letter-spacing:1px;">𝒩𝑒𝓌 𝒜𝓇𝓇𝒾𝓋𝒶𝓁𝓈</b>
+            <h1 id="zero" class="jfu">𝗝𝗨𝗦𝗧 </h1>
+            <h1 id="first" class="jfu">𝗙𝗢𝗥</h1>
+            <h1 id="second" class="jfu">𝗬𝗢𝗨 </h1>
+            <div id="offer">
+                <h2 id="off1"><i class="fa-solid fa-globe"></i> FOR ONLINE <br/>ORDER</h2>
+                <h2 id="off2"><i class="fa-solid fa-percent"></i> 30% OFF</h2>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/04/9c/1b/049c1b3c146267671b0cd1258d7d3066.jpg" alt="Fashion 2">
+            <div class="item-title">KURTI</div>
+            <div class="item-desc">Trendy designer kurti for all occasions. Soft cotton, available in all sizes..</div>
+            <div class="item-price">₹1,499</div>
+            <button class="buy-btn"><i class="fa-solid fa-bag-shopping"></i> Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://www.kollybollyethnics.com/image/catalog/data/14Dec2022/Bollywood-model-pista-green-sequins-georgette-saree-nc5201.jpg" alt="Fashion 3">
+            <div class="item-title">SAREE</div>
+            <div class="item-desc">wide range of designer saree, silk saree, bridal saree, wedding saree.</div>
+            <div class="item-price">₹1,099</div>
+            <button class="buy-btn"><i class="fa-solid fa-bag-shopping"></i> Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="http://thewowstyle.com/wp-content/uploads/2015/07/ball-gown-wedding-dresses-.jpg" alt="Fashion 4">
+            <div class="item-title">Designer Gown</div>
+            <div class="item-desc">Floor-length gown with sequin work. Make a statement at any party.</div>
+            <div class="item-price">₹2,299</div>
+            <button class="buy-btn"><i class="fa-solid fa-bag-shopping"></i> Buy Now</button>
+        </div>
+        <!-- New Item 1 -->
+        <div class="card">
+            <img src="https://i5.walmartimages.com/asr/bad3f02d-c452-4bae-868d-b4741c471c96_1.f2c98dabde95a804d86ec2e2609850a9.jpeg" alt="Fashion 5">
+            <div class="item-title">CASUAL T-SHIRT</div>
+            <div class="item-desc">Comfortable cotton t-shirt, perfect for daily wear. Available in multiple colors.</div>
+            <div class="item-price">₹499</div>
+            <button class="buy-btn"><i class="fa-solid fa-bag-shopping"></i> Buy Now</button>
+        </div>
+        <!-- New Item 2 -->
+        <div class="card">
+            <img src="https://i5.walmartimages.com/asr/29835b55-59f8-4d23-9e2d-cf50d29ab4c3_1.7297c5c6618d49336e8ce1ae2d3c20ec.jpeg" alt="Fashion 6">
+            <div class="item-title">DENIM JACKET</div>
+            <div class="item-desc">Classic blue denim jacket, stylish and durable for all seasons.</div>
+            <div class="item-price">₹1,799</div>
+            <button class="buy-btn"><i class="fa-solid fa-bag-shopping"></i> Buy Now</button>
+        </div>
+        <!-- New Item 3 -->
+        <div class="card">
+            <img src="https://i.pinimg.com/originals/51/f6/24/51f624f9d87ac3ea69978887c1827b54.jpg" alt="Fashion 7">
+            <div class="item-title">WATCHES</div>
+            <div class="item-desc">Elegant Formal and modern Watches. Shine at every event!</div>
+            <div class="item-price">₹2,599</div>
+            <button class="buy-btn"><i class="fa-solid fa-bag-shopping"></i> Buy Now</button>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 SHIVAM FASHIONS &mdash; All Rights Reserved.
+        <div class="footer-links">
+            <a href="#home"><i class="fa-solid fa-house"></i> Home</a> |
+            <a href="#About"><i class="fa-solid fa-circle-info"></i> About</a> |
+            <a href="#Shop"><i class="fa-solid fa-store"></i> Shop</a> |
+            <a href="#Login"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+        <div style="margin-top:12px; font-size:14px;">
+            <i class="fa-solid fa-location-dot"></i> 123 Fashion Street, Jamshedpur,Jharkhand, India<br>
+            <i class="fa-solid fa-phone"></i> +91 97*****499 &nbsp; | &nbsp;
+            <i class="fa-solid fa-envelope"></i> info@shivamfashions.com
+        </div>
+        <div style="margin-top:10px;">
+            <a href="https://www.facebook.com/" target="_blank" style="color:#fff; margin:0 6px;"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" style="color:#fff; margin:0 6px;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.twitter.com/" target="_blank" style="color:#fff; margin:0 6px;"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <div style="margin-top:10px; font-size:13px; color:#ffc107;">
+            Designed by Shivam Fashions Team
+        </div>
+    </footer>
+    </footer>
+    <script>
+    const nav = document.getElementById("nav");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 10) {
+            nav.classList.add("scrolled");
+        } else {
+            nav.classList.remove("scrolled");
+        }
+    });
+    </script>
+</body>
+</html>
+</html>
